@@ -1,0 +1,51 @@
+/* The 'scene' acts like the viewpoint/camera. */
+.scene {
+  width: 200px;       /* Adjust as needed */
+  height: 200px;
+  margin: 100px auto; /* Centers the scene on the page */
+  perspective: 800px; /* The lower the value, the more intense the 3D effect */
+  position: relative;
+  border: 1px solid #ccc; /* Optional: just to see the boundary of the scene */
+}
+
+/* The cube itself */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Ensures child faces are positioned in 3D */
+  animation: spin 5s infinite linear;
+}
+
+/* Each face of the cube. Place images or text inside. */
+.face {
+  position: absolute;
+  width: 200px;  /* Same as .scene width */
+  height: 200px; /* Same as .scene height */
+  /* Just to make each face visible; you can remove or customize background. */
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #f00;
+  text-align: center;
+  line-height: 200px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+}
+
+/* Position each face so it forms a cube. translateZ(100px) moves it half the width forward. */
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg)  translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg)  translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* The spinning animation */
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
