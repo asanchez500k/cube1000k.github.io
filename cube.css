@@ -36,6 +36,7 @@
 /* BACK face */
 .back {
   transform: rotateY(180deg) translateZ(100px);
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center / cover no-repeat;
 }
 
 /* RIGHT face */
