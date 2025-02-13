@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Rotating Cube with Multiple Images</title>
+  <style>
+    /* Container for perspective */
+    .scene {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      perspective: 800px;
+    }
+
+    /* The cube container */
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      /* Temporarily use a fixed rotation to inspect all sides */
+      transform: rotateY(45deg) rotateX(45deg);
+      /* Uncomment below to animate once you're happy with the layout */
+      /* animation: spin 10s infinite linear; */
+    }
+
+    /* Common style for each face */
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      backface-visibility: hidden;
+    }
+
+    /* FRONT face */
+    .front {
+      transform: translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* BACK face */
+    .back {
+      transform: rotateY(180deg) translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* RIGHT face */
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* LEFT face */
+    .left {
+      transform: rotateY(-90deg) translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* TOP face */
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* BOTTOM face */
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+      background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
+    }
+
+    /* Spinning animation (optional) */
+    @keyframes spin {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face right"></div>
+      <div class="face left"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+</body>
+</html>
