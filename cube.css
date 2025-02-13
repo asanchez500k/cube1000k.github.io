@@ -1,6 +1,4 @@
-/* cube.css */
-
-/* Scene container for perspective */
+/* Container that provides the 3D perspective */
 .scene {
   width: 200px;
   height: 200px;
@@ -14,52 +12,54 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: spin 5s infinite linear;
+  animation: spin 10s infinite linear;
 }
 
-/* Each face of the cube */
+/* Common style for each face */
 .face {
   position: absolute;
   width: 200px;
   height: 200px;
-  /* Just for visibility; remove or customize as you like */
-  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid #ccc;
 }
 
-/* FRONT face with external URL image */
+/* FRONT face */
 .front {
   transform: translateZ(100px);
-  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center / cover no-repeat;
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
 /* BACK face */
 .back {
   transform: rotateY(180deg) translateZ(100px);
-  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center / cover no-repeat;
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
 /* RIGHT face */
 .right {
   transform: rotateY(90deg) translateZ(100px);
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
 /* LEFT face */
 .left {
   transform: rotateY(-90deg) translateZ(100px);
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
 /* TOP face */
 .top {
   transform: rotateX(90deg) translateZ(100px);
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
 /* BOTTOM face */
 .bottom {
   transform: rotateX(-90deg) translateZ(100px);
+  background: url("https://i.etsystatic.com/13941551/r/il/042e15/6286978871/il_1140xN.6286978871_j0iu.jpg") center/cover no-repeat;
 }
 
-/* Simple spinning animation */
+/* Spinning animation */
 @keyframes spin {
   from {
     transform: rotateX(0deg) rotateY(0deg);
